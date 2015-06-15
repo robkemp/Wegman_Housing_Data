@@ -1,0 +1,43 @@
+
+# Colorado Municipal Housing and Population Data Dictionary
+
+## Description of Process and Estimate Methodology
+
+Each year the State Demography Office creates population estimates for all of the municipalities in Colorado.  The Estimates process requires Construction and Group Quarters data from local governments and Census estimates of persons per household and a base year population and housing unit estimate.  This process generates more data than just a total population estimate. Municipalities do not always exist entirely within one county, so parts exist in each county.  These parts are an additional feature of this dataset (i.e. you can get specific estimates for the Adams, Arapahoe, and Douglas County parts of Aurora).  The timeseries includes the most recent final "postcensal" estimates for 2010 to 2013, meaning our most recent estimates based on the 2010 Census moving forward. The data from 2000 to 2009 is from our "intercensal" process that apportions error between our postcensal estimates and the Census according to the Das Gupta method used by the Census Bureau.
+
+#### Variable Descriptions
+#####countyfips: 
+Federal Information Processing Standards (FIPS) Number for each County, without leading zeros. The one exception is that multi-county place totals (i.e. places like Aurora) will have the county number of 999 rather than their FIPS #, however the parts will be labeled with the appropriate county numbers.
+
+#####placefips: 
+Federal Information Processing Standards (FIPS) Number for each municipality, without leading zeros. Place FIPS of 00000 are for County totals.
+
+#####Areaname: 
+Name of the Municipality, will include either "(part)" or "(total)" if it a multi-county place.
+
+#####year: 
+Estimate year, specifically reflects July 1 of each year.
+
+#####totalPopulation: 
+Total Population on July 1 of the year.
+
+#####householdPopulation: 
+Population Living in Households on July 1 of the year.
+
+#####groupquartersPopulation: 
+Population living in group quarters (e.g. nursing homes, prisons, dorms) on July 1 of the year.
+
+#####personsPerHousehold:
+The number of peropl in an occupied housing unit on average.  The number is originally derived at the Census base and held (mostly) constant across each decade.  The number can change some based on local challenges or other methodological needs.
+
+#####totalHousingUnits: 
+Estimates number of housing units for July 1 of the year. Based on either Certificates of Occupancy or Building Permits from the State Demography Office collection of local data or Census Bureau estimates.
+
+#####occupiedHousingUnits: 
+Estimates of the number of occupied housing units on July 1, this is also a measure of the number of households. This number is adjusted at the municipal level to account for adjustments made to the population that ensures that all municipalities in an area sum to the county total for population.
+
+#####vacantHousingUnits:
+Estimates of the number of vacant households in the municipality. Originally based on the Census base, but then fluctates over the period as an implied output of the model (see Occupied Housing Units)
+
+#####vacancyRate:
+Estimates of the Vacancy rate derived by dividing estimates vacant housing units by the total number of housing units.
